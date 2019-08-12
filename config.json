@@ -3,9 +3,9 @@
   "username": "Matthewvliay",
   "name": null,
   "userimg": "https://avatars3.githubusercontent.com/u/42940122?v=4",
-  "sort": "created",
-  "order": "asc",
+  "sort": "updated",
+  "order": "desc",
   "includeFork": false,
-  "theme": "dark.css"
+  "theme": "light.css"
  }
 ]
