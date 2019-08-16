@@ -19,5 +19,12 @@
 		"sub_title": "An Awesome Tool",
 		"top_image": "https://images.unsplash.com/photo-1563305145-b64e0c2184aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
 		"visible": true
+	},
+	{
+		"url_title": "Open-Mindness",
+		"title": "Open-Mindness",
+		"sub_title": "Keeping an Open Mind",
+		"top_image": "https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1450",
+		"visible": true
 	}
 ]
