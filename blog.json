@@ -21,10 +21,17 @@
 		"visible": true
 	},
 	{
-		"url_title": "Open-Mindness",
-		"title": "Open-Mindness",
+		"url_title": "Open-Mind",
+		"title": "Open-Mind",
 		"sub_title": "Keeping an Open Mind",
-		"top_image": "https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1450",
+		"top_image": "https://images.unsplash.com/photo-1499728603263-13726abce5fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+		"visible": true
+	},
+	{
+		"url_title": "school-is-coming",
+		"title": "school-is-coming",
+		"sub_title": "..So I built a quiz app!",
+		"top_image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
 		"visible": true
 	}
 ]
