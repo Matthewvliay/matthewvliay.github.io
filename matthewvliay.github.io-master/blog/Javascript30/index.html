@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Javascript30</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="../../index.css" />
+	</head>
+
+	<body>
+		<div id="loading">
+			<div id="spinner"></div>
+		</div>
+		<a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+		<div id="background"></div>
+		<table id="profile_blog">
+			<tbody>
+				<tr>
+					<td style="width:8vw;"><div id="profile_img_blog"></div></td>
+					<td style="width:52vw;">
+						<div id="username_blog"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="blog-display">
+			<h1 id="blog_title">Javascript30</h1>
+			<h2 id="blog_sub_title">An eye opening course</h2>
+			<div id="blog">
+				<p>
+					One of the best courses I've seen for learning javascript is Javascript30 by Wes Bos. It touches on so many
+					different areas of javascript, and it is really awesome for all people trying to seriously learn javascript:
+					new, intermediate, and expert.
+					<br />
+					I've been on this course for nearly 3 weeks while working on projects. While doing my projects, I always refer
+                    back to this course - the videos, syntax, logic, and concepts. It's a fantastic tool for learning.
+                    <br> I personally love watching these videos because they're:
+					<ul> 
+                        <strong>
+                                <li>Thorough - everything is explained in a way that I can grasp and pick up at a later time</li>
+                                <br>
+                                <li>Simple - neat little projects </li>
+                                <br>
+                                <li>FREE? Seriously, our boy Wes is doing us a favor</li>
+                        </strong>
+                    </ul>
+				</p>
+			
+				<img src="https://images.unsplash.com/photo-1564074621995-7c1f9a8ea9a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+				<p>
+                    That's it! I began Javascript30 because I didn't know what to build, or even start, 
+                    and I'm sure there are others stuck in the same situation I was, so I want to give 
+                    Wes Bos a huge thanks for doing us all a favor and making his knowledge free and easily accessible.
+				</p>
+			</div>
+		</div>
+		<div id="footer_blog">
+			<a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+		</div>
+		<script type="text/javascript">
+			setTimeout(function() {
+				document.getElementById("loading").classList.add("animated")
+				document.getElementById("loading").classList.add("fadeOut")
+				setTimeout(function() {
+					document.getElementById("loading").classList.remove("animated")
+					document.getElementById("loading").classList.remove("fadeOut")
+					document.getElementById("loading").style.display = "none"
+				}, 800)
+			}, 1500)
+			$.getJSON("../../config.json", function(user) {
+				var icon = document.createElement("link")
+				icon.setAttribute("rel", "icon")
+				icon.setAttribute("href", user[0].userimg)
+				icon.setAttribute("type", "image/png")
+				document.getElementsByTagName("head")[0].appendChild(icon)
+				document.getElementById("profile_img_blog").style.background = `url('${user[0].userimg}') center center`
+				document.getElementById("username_blog").innerHTML = `<spanstyle="display:${
+					user[0].name == null || !user[0].name ? "none" : "block"
+				};">${user[0].username}</span><br>@${user[0].username}<b id="blog_time"></b>`
+			})
+		</script>
+	</body>
+</html>

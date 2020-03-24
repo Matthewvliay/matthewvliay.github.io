@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>August</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="../../index.css" />
+	</head>
+    
+	<body >
+		<div id="loading">
+			<div id="spinner"></div>
+		</div>
+		<a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+		<div id="background"></div>
+		<table id="profile_blog">
+			<tbody>
+				<tr>
+					<td style="width:8vw;"><div id="profile_img_blog"></div></td>
+					<td style="width:52vw;">
+						<div id="username_blog"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="blog-display">
+			<h1 id="blog_title">August Update!</h1>
+			<h2 id="blog_sub_title">Mini update, mini projects!</h2>
+			<div id="blog">
+				<p>
+					Welcome back to my blog! It's been a while, but trust me, I've been here the entire time!
+				</
+
+				<p>
+					For the past month and a half or so, I've been working on vanilla javascript projects to build a foundation
+					for myself, and to be honest, it's been very exciting!
+					<a href="http://dispensable-oil.surge.sh/">Here</a>
+					is one of the simpler programs I've coded, but there's more on my profile if you'd like to check them out.
+				</p>
+				
+				<p>
+					Coding has been fun so far(and very bittersweet). I've learned that there's definitely an infinitely
+					increasing amount of knowledge to attain about modern development, and I will probably never 'master'
+					javascript or any other programming language, but nothing beats the feeling of learning why a piece of
+					technology works, so why not try my damn best to learn it all?!
+                </p>
+                <img
+					src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+				/>
+			</div>
+		</div>
+		<div id="footer_blog">
+			<a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+		</div>
+		<script type="text/javascript">
+			setTimeout(function() {
+				document.getElementById("loading").classList.add("animated")
+				document.getElementById("loading").classList.add("fadeOut")
+				setTimeout(function() {
+					document.getElementById("loading").classList.remove("animated")
+					document.getElementById("loading").classList.remove("fadeOut")
+					document.getElementById("loading").style.display = "none"
+				}, 800)
+			}, 1500)
+			$.getJSON("../../config.json", function(user) {
+				var icon = document.createElement("link")
+				icon.setAttribute("rel", "icon")
+				icon.setAttribute("href", user[0].userimg)
+				icon.setAttribute("type", "image/png")
+				document.getElementsByTagName("head")[0].appendChild(icon)
+				document.getElementById("profile_img_blog").style.background = `url('${user[0].userimg}') center center`
+				document.getElementById("username_blog").innerHTML = `<spanstyle="display:${
+					user[0].name == null || !user[0].name ? "none" : "block"
+				};">${user[0].username}</span><br>@${user[0].username}<b id="blog_time"></b>`
+			})
+		</script>
+	</body>
+</html>
